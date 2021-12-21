@@ -322,7 +322,7 @@ contract Strategy is BaseStrategy {
 			_liquidatedAmount = Math.min(balanceOfWant(), _amountNeeded);
 			_loss = _amountNeeded.sub(_liquidatedAmount);
 
-			// _enforceSlippageOut(toExitAmount, _liquidatedAmount.sub(looseAmount));
+			_enforceSlippageOut(toExitAmount, _liquidatedAmount.sub(looseAmount));
 		} else {
 			_liquidatedAmount = _amountNeeded;
 		}
